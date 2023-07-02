@@ -7,6 +7,14 @@ let messageEl = document.getElementById("message");
 let sumEl = document.getElementById("sum");
 let cardsEl = document.getElementById("cards");
 
+let player = {
+  name: "Player",
+  chips: 150,
+};
+
+let playerEl = document.getElementById("player");
+playerEl.textContent = player.name + ": $" + player.chips;
+
 function startGame() {
   isAlive = true;
   let firstCard = getRandomCard();
@@ -37,12 +45,12 @@ function renderGame() {
 }
 
 function newCard() {
-    if (isAlive === true && hasBlackJack === false) {
-        let card = getRandomCard()
-        sum += card
-        cards.push(card)
-        renderGame()        
-    }
+  if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard();
+    sum += card;
+    cards.push(card);
+    renderGame();
+  }
 }
 
 function getRandomCard() {
